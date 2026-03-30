@@ -1,9 +1,20 @@
 import './App.css'
 import Counter from './counte.jsx'
 import Batsman  from './Batsman.jsx'
+// import User from './user.jsx'
+import { Suspense } from 'react'
+// import User2 from './user.jsx'
+import Friend from './friendend.jsx'
+// const featachUsers = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json())
 
+const loadData = async ()=>{
+  const res = await fetch('https://jsonplaceholder.typicode.com/users')
+  return res.json();
+
+}
 function App(){
-
+  const  promises = loadData()
+ 
 
 
 
@@ -15,6 +26,12 @@ function App(){
   }
   return(
     <div>
+     {/* <Suspense fallback={<h1>Data is loading....</h1>}>
+       <User featachUsers = {featachUsers}></User>
+     </Suspense> */}
+     <Suspense fallback={<h1>The Data is Loading...</h1>}>
+      <Friend promises={promises}></Friend>
+     </Suspense>
       <Batsman></Batsman>
       <Counter></Counter>
    <button onClick={handleClick}>Click Me</button>
