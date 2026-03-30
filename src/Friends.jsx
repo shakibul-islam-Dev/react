@@ -1,12 +1,12 @@
-export default function Friend({myfriends}){
+// export default function Friend({myfriends}){
     
     
     
     
-    return
-     <li style={{textAlign:'left'}}
-     >Best: {myfriends}</li>
-}
+//     return
+//      <li style={{textAlign:'left'}}
+//      >Best: {myfriends}</li>
+// }
 //componets
 //conditional rendering
 //map list rendering
